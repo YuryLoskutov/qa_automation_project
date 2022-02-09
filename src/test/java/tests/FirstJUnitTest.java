@@ -24,6 +24,6 @@ public class FirstJUnitTest {
 
     @Test
     void simpleTest() {
-        Assertions.assertTrue(2 < 3 );
+        Assertions.assertTrue(2 < 3);
     }
 }
