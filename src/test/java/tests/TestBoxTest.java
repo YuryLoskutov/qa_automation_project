@@ -16,7 +16,7 @@ public class TestBoxTest {
     @BeforeAll
     static void BeforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "1920×1080";
     }
 
 
@@ -50,20 +50,18 @@ public class TestBoxTest {
         $("#react-select-3-input").setValue("Haryana").pressEnter();
         $("#react-select-4-input").setValue("Karnal").pressEnter();
 
-        $("#submit").click();
+        $("#submit").scrollTo().click();
 
         $(".modal-header").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text("Name Last Name"));
-        $(".table-responsive").shouldHave(text("Mail@mail.com"));
-        $(".table-responsive").shouldHave(text("Male"));
-        $(".table-responsive").shouldHave(text("1234567890"));
-        $(".table-responsive").shouldHave(text("04 December,1995"));
-        $(".table-responsive").shouldHave(text("Arts"));
-        $(".table-responsive").shouldHave(text("Sports, Reading, Music"));
-        $(".table-responsive").shouldHave(text("cat.png"));
-        $(".table-responsive").shouldHave(text("Moskow, Pushkin's house, Kolotushkina st"));
-        $(".table-responsive").shouldHave(text("Haryana Karnal"));
-
-
+        $(".table-responsive").shouldHave(text("Name Last Name")
+                , text("Mail@mail.com")
+                , text("Male")
+                , text("1234567890")
+                , text("04 December,1995")
+                , text("Arts")
+                , text("Sports, Reading, Music")
+                , text("cat.png")
+                , text("Moskow, Pushkin's house, Kolotushkina st")
+                , text("Haryana Karnal"));
     }
 }
