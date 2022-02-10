@@ -16,7 +16,7 @@ public class TestBoxTest {
     @BeforeAll
     static void BeforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920×1080";
+        Configuration.browserSize = "1920x1080";
     }
 
 
