@@ -53,15 +53,15 @@ public class TestBoxTest {
         $("#submit").scrollTo().click();
 
         $(".modal-header").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text("Name Last Name")
-                , text("Mail@mail.com")
-                , text("Male")
-                , text("1234567890")
-                , text("04 December,1995")
-                , text("Arts")
-                , text("Sports, Reading, Music")
-                , text("cat.png")
-                , text("Moskow, Pushkin's house, Kolotushkina st")
-                , text("Haryana Karnal"));
+        $(".table-responsive").shouldHave(text("Name Last Name"),
+                text("Mail@mail.com"),
+                text("Male"),
+                text("1234567890"),
+                text("04 December,1995"),
+                text("Arts"),
+                text("Sports, Reading, Music"),
+                text("cat.png"),
+                text("Moskow, Pushkin's house, Kolotushkina st"),
+                text("Haryana Karnal"));
     }
 }
