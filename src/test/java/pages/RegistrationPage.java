@@ -16,7 +16,7 @@ public class RegistrationPage {
     private ResultTableComponent resultTableComponent = new ResultTableComponent();
 
     // locators
-    SelenideElement
+    private SelenideElement
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             emailInput = $("#userEmail"),
@@ -30,7 +30,6 @@ public class RegistrationPage {
             stateInput = $("#react-select-3-input"),
             cityInput = $("#react-select-4-input"),
             submit = $("#submit");
-
 
     // actions
     public RegistrationPage openPage() {
