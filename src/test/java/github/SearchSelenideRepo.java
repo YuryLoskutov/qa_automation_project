@@ -1,6 +1,5 @@
 package github;
 
-import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -21,8 +20,3 @@ public class SearchSelenideRepo {
         $("h1").shouldHave(text("selenide / selenide"));
     }
 }
-
-// Тест состоит из (запиши в тетрадь):
-// ARRANGE - фаза подготовки данных, например тест данные
-// ACT - выполнение шага
-// ASSERT - проверка рез-тов
