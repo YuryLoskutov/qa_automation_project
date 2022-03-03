@@ -4,13 +4,13 @@
 # Log file
 *.log
 
-# BlueJ files
+# BlueJ filesDownload
 *.ctxt
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Properties files
+# Properties filesDownload
 *.properties
 
 # Package Files #
@@ -23,7 +23,7 @@
 *.rar
 *.iml
 
-# Project gen files
+# Project gen filesDownload
 .idea
 .allure/
 .gradle/
