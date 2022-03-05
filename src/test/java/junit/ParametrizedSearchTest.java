@@ -5,9 +5,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.util.List;
+import java.util.stream.Stream;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -26,7 +30,7 @@ public class ParametrizedSearchTest {
     }
 
     @ValueSource(strings = {"Selenide", "Junit 5"})
-    @ParameterizedTest (name = "Check {0}")
+    @ParameterizedTest (name = "Check \"{0}\"")
     void commonSearchTest(String testData) {
         $("#text").setValue(testData);
         $(".search2__button").click();
@@ -44,9 +48,19 @@ public class ParametrizedSearchTest {
         $$("li.serp-item").find(text(expectedText)).shouldBe(visible);
     }
 
-    @MethodSource
-    @ParameterizedTest
-    void mixedArgumentsTest() {
+    static Stream<Arguments> mixedArgumentsTestDataProvider() {
+        return Stream.of(
+                //Ниже можно приводить любые типы данных
+                Arguments.of("Selenide", List.of(1,2,3), true),
+                Arguments.of("Junit 5", List.of(5,6,7), false)
+        );
+
+    }
+
+    @MethodSource(value = "mixedArgumentsTestDataProvider")
+    @ParameterizedTest(name = "Name {2}")
+    void mixedArgumentsTest(String firstArg, List<Integer> secondArg, boolean aBooleanValue) {
+        System.out.println("String: " + firstArg + " list: " + secondArg.toString() + " boolean: " + aBooleanValue);
 
     }
 
