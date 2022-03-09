@@ -2,17 +2,13 @@ package junit.homeWork;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class GoogleTransRusEndTest {
-
-    //Тест кейс 1: проверка на соотвествие пререводов с русского на английский в google переводчике
 
     @BeforeEach
     void precondition() {
