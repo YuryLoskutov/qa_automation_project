@@ -50,5 +50,7 @@ public class StepsTest {
         steps.openIssueTab();
         steps.shouldSeeIssueWithNumber(ISSUE_NUMBER);
 
+        steps.takeScreenshot();
+
     }
 }
