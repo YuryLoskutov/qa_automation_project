@@ -22,6 +22,8 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class FilesParsingTest {
 
+    ClassLoader classLoader = getClass().getClassLoader();
+
     @Test
     void parsePdfTest () throws Exception {
         open("https://junit.org/junit5/docs/current/user-guide/");
