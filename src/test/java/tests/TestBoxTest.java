@@ -2,8 +2,6 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -33,7 +31,7 @@ public class TestBoxTest extends TestBase{
         $(byText("Reading")).click();
         $(byText("Music")).click();
 
-        File cat = new File("src\\test\\resources\\cat.png");
+        //File cat = new File("src\\test\\resources\\cat.png");
         //$("#uploadPicture").uploadFile(cat);
 
         $("#currentAddress").setValue("Moskow, Pushkin's house, Kolotushkina st");
