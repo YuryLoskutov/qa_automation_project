@@ -2,11 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import net.jodah.failsafe.internal.util.Assert;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class FirstJUnitTest {
 
@@ -23,6 +19,7 @@ public class FirstJUnitTest {
     }
 
     @Test
+    @Disabled
     void simpleTest() {
         Assertions.assertTrue(2 < 3);
     }
