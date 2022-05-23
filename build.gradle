@@ -28,12 +28,18 @@ dependencies {
             'com.codeborne:selenide:6.2.1',
             'org.junit.jupiter:junit-jupiter:5.8.2',
             'io.qameta.allure:allure-selenide:2.17.2',
-            'org.aeonbits.owner:owner:1.0.4',
-            'org.slf4j:slf4j-simple:1.7.32'
+            'org.aeonbits.owner:owner:1.0.4'
     )
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.2')
 
 }
+
+task simple_tests(type: Test) {
+    useJUnitPlatform(){
+        includeTags "tests_simple"
+    }
+}
+
 
 task owner(type: Test) {
     useJUnitPlatform(){
