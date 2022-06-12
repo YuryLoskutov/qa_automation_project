@@ -1,22 +1,19 @@
 package owner.config;
 
-import java.util.Objects;
+import org.aeonbits.owner.Config;
 
-public class WebDriverConfig {
+import java.net.URL;
 
-    public Browser getBrowser() {
-        String browser = System.getProperty("browser");
-        if (Objects.isNull(browser)) {
-            browser = "CHROME";
-        }
-        return Browser.valueOf(browser);
-    }
+public interface WebDriverConfig extends Config {
 
-    public String gerBaseUrl () {
-        String baseUrl = System.getProperty("baseUrl");
-        if (Objects.isNull(baseUrl)) {
-            baseUrl = "https://github.com";
-        }
-        return baseUrl;
-    }
+    @Key("baseUrl")
+    @DefaultValue("https://github.com")
+    String getBaseUrl();
+
+    @Key("browser")
+    @DefaultValue("CHROME")
+    Browser getBrowser();
+
+    @Key("remoteUrl")
+    URL getRemoteUrl();
 }
