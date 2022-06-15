@@ -8,12 +8,27 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class WebTest {
     @Test
-    void webTest() {
+    void remoteTest() {
+
+        System.setProperty("launch", "remote");
 
         WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
 
         assertThat(config.browserName()).isEqualTo("CHROME");
         assertThat(config.browserVersion()).isEqualTo("101.0");
-        assertThat(config.launchType()).isEqualTo(""); //for gradle clean test -Dlaunch=local
+        assertThat(config.launchType()).isEqualTo("https://user1:1234@selenoid.autotests.cloud/wd/hub/");
     }
+
+    @Test
+    void localTest() {
+
+        System.setProperty("launch", "local");
+
+        WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
+
+        assertThat(config.browserName()).isEqualTo("CHROME");
+        assertThat(config.browserVersion()).isEqualTo("101.0");
+        assertThat(config.launchType()).isEqualTo("");
+    }
+
 }
