@@ -6,10 +6,9 @@ import org.aeonbits.owner.Config;
         "classpath:homeWork/api.properties"
 })
 
-public interface ApiConfig extends Config{
+public interface ApiConfig extends Config {
 
     @Key("baseUrl")
     @DefaultValue("https://demoqa.com/")
     String baseUrl();
-
 }

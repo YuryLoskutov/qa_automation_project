@@ -8,14 +8,13 @@ import org.aeonbits.owner.Config;
 
 public interface WebConfig extends Config {
 
-    @Key("browser.name")
+    @Key("browser_name")
     String browserName();
 
-    @Key("browser.version")
+    @Key("browser_version")
     String browserVersion();
 
-    @Key("launch.type")
+    @Key("launch_type")
     String launchType();
-
 
 }
