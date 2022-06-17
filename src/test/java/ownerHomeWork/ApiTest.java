@@ -18,4 +18,5 @@ public class ApiTest {
         assertThat(config.baseUrl()).isEqualTo("https://demoqa.com/");
         assertThat(configToken.token()).isEqualTo("123321abcSuperSecretPass");
     }
+
 }

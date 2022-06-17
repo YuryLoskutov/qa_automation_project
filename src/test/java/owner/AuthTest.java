@@ -1,6 +1,7 @@
 package owner;
 
 import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import owner.config.AuthConfig;
 
@@ -23,6 +24,7 @@ public class AuthTest {
     }
 
     @Test
+    @Disabled
     public void testLocalFile() throws IOException {
         String content = "username=secret-user\npassword=secret-pass";
         Path propsPath = Paths.get("/tmp/secret.properties");

@@ -10,6 +10,7 @@ public class WebTest {
     @Test
     void remoteTest() {
 
+        //./gradlew clean test -Dlaunch=remote
         System.setProperty("launch", "remote");
 
         WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
@@ -22,6 +23,7 @@ public class WebTest {
     @Test
     void localTest() {
 
+        //./gradlew clean test -Dlaunch=local
         System.setProperty("launch", "local");
 
         WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
