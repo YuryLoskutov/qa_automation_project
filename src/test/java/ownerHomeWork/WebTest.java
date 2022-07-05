@@ -1,12 +1,24 @@
 package ownerHomeWork;
 
+import com.codeborne.selenide.Configuration;
 import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import ownerHomeWork.configHW.WebConfig;
+import ownerHomeWork.configHW.WebProvider;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class WebTest {
+
+    @BeforeAll
+    static void configure(){
+
+        if (WebProvider.isRemoteWebDriver()) {
+            Configuration.remote = WebProvider.webConfig.launchType();
+        }
+    }
+
     @Test
     void remoteTest() {
 
